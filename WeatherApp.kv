@@ -1,0 +1,74 @@
+<WeatherApp>
+	text_color:root.text_color
+	canvas.before:
+		Color:
+			rgba:1,0,0,0
+		Rectangle:
+			size:self.size
+	RelativeLayout:
+		Label:
+			text:root.topString
+			text_size:self.size
+			halign:"center"
+			valign:"middle"
+			color:root.text_color
+			font_size:'80sp'
+			size_hint:(1,.3)
+			pos_hint:{"top":1}
+			font_name:"./fonts/Roboto-Thin.ttf"
+		Label:
+			text:"70 / 40 | Cloudy"
+			text_size:self.size
+			halign:"center"
+			valign:"middle"
+			color:root.text_color
+			font_size:'55sp'
+			size_hint:(1,.15)
+			pos_hint:{"top":.7}
+			font_name:"./fonts/Roboto-Thin.ttf"
+		BoxLayout:
+			id: days
+			size_hint:(1,.55)
+			pos_hint:{"top":.55}
+			WeatherDay:
+				day:"1"
+			WeatherDay:
+				day:"2"
+			WeatherDay:
+				day:"3"
+			WeatherDay:
+				day:"4"
+
+<WeatherDay>
+	RelativeLayout:
+		Label:
+			text:root.date
+			text_size:self.size
+			halign:"center"
+			valign:"middle"
+			color:root.text_color
+			font_size:'60sp'
+			size_hint:(1,.3)
+			pos_hint:{"top":.9}
+			font_name:"./fonts/Roboto-Thin.ttf"
+		Label:
+			text:root.forecast
+			text_size:self.size
+			halign:"center"
+			valign:"middle"
+			color:root.text_color
+			font_size:'50sp'
+			size_hint:(1,.3)
+			pos_hint:{"top":.6}
+			font_name:"./fonts/Roboto-Thin.ttf"
+
+		Label:
+			text:root.condition
+			text_size:self.size
+			halign:"center"
+			valign:"middle"
+			color:root.text_color
+			font_size:'50sp'
+			size_hint:(1,.3)
+			pos_hint:{"top":.3}
+			font_name:"./fonts/Roboto-Thin.ttf"

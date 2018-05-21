@@ -1,0 +1,41 @@
+<TimeZoneApp>
+	canvas.before:
+		Color:
+			rgba:1,0,0,1
+		Rectangle:
+			size:self.size
+	BoxLayout:
+		orientation:"vertical"
+		TimeZone:
+			tz:"US/Alaska"
+			pretty_tz:"Alaska"
+		TimeZone:
+			tz:"America/Los_Angeles"
+			tz:"Pacific"
+		TimeZone:
+			tz:"US/Central"
+			pretty_tz:"Central"
+		TimeZone:
+			tz:"America/Chicago"
+		TimeZone:
+			tz:""
+
+<TimeZone>
+	BoxLayout:
+		orientation:"vertical"
+		Label:
+			text: root.output
+			text_size:self.size
+			halign:"center"
+			valign:"bottom"
+			font_size:'45sp'
+			font_name:"./fonts/Roboto-Thin.ttf"
+			
+		Label:
+			text: root.pretty_tz
+			text_size:self.size
+			halign:"center"
+			valign:"top"
+			font_size:'30sp'
+			font_name:"./fonts/Roboto-Thin.ttf"
+			

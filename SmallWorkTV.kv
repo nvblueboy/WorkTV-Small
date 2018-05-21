@@ -1,0 +1,72 @@
+#: include WeatherApp.kv
+#: include TimeZoneApp.kv
+
+<SmallWorkTV>
+	canvas.before:
+		Color:
+			rgba:1,1,1,1
+		Rectangle:
+			size:self.size
+	RelativeLayout:
+		LogoApp:
+			size_hint:(.9,.25)
+			pos_hint: {"top":.98, "right":.95}
+		LocalTime:
+			size_hint:(.9, .2)
+			pos_hint: {"top":.68, "right":.95}
+		WeatherApp:
+			size_hint:(.9, .45)
+			pos_hint: {"top":.47, "right":.95}
+			location:"San Juan Capistrano, CA"
+
+<AddressApp>
+	canvas.before:
+		Color:
+			rgba:0,0,0,0
+		Rectangle:
+			size:self.size
+	RelativeLayout:
+		Label:
+			text:"31371 Rancho Viejo Rd #201, San Juan Capistrano, CA 92675\n1-949-373-2400"
+			text_size:self.size
+			halign:"center"
+			valign:"middle"
+			color:root.text_color
+			font_size:'30sp'
+			font_name:"./fonts/Roboto-Thin.ttf"
+<LogoApp>
+	canvas.before:
+		Color:
+			rgba:0,0,0,0
+		Rectangle:
+			size:self.size
+	AsyncImage:
+		source:"./SALogo.png"
+
+<LocalTime>
+	canvas.before:
+		Color:
+			rgba:0,0,0,0
+		Rectangle:
+			size:self.size
+	RelativeLayout:
+		Label:
+			text:root.timeStr
+			text_size:self.size
+			halign:"center"
+			valign:"middle"
+			size_hint: (1, .5)
+			pos_hint: {"top":1}
+			color:root.text_color
+			font_size:'100sp'
+			font_name:"./fonts/Roboto-Light.ttf"
+		Label:
+			text:"Wednesday, September 22, 2018"
+			text_size:self.size
+			halign:"center"
+			valign:"middle"
+			size_hint: (1, .5)
+			pos_hint: {"top":.5}
+			color:root.text_color
+			font_size:'70sp'
+			font_name:"./fonts/Roboto-Thin.ttf"
