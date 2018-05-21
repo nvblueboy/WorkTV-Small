@@ -60,9 +60,9 @@ class WeatherApp(BaseApp):
 
 			self.topString = self.temperature + " | " + self.condition
 
+			Logger.info("WeatherApp: Got latest weather, updating children...")
 			if len(self.children) > 0:
 				for child in self.ids["days"].children:
-					print(child)
 					updateFN = getattr(child, "updateData", None)
 
 					if callable(updateFN):
